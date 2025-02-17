@@ -5,7 +5,6 @@ pdf=FPDF(orientation='P',unit='mm',format='A4')
 df=pd.read_csv("topics.csv")
 pdf.set_auto_page_break(margin=0,auto=False)
 
-
 for index,row in df.iterrows():
     pdf.add_page()  # Adds new pages
     #Set Header
@@ -29,8 +28,5 @@ for index,row in df.iterrows():
         pdf.set_text_color(180, 180, 180)
 
         pdf.cell(txt=row['Topic'], align="R", w=0, h=8, border=0)
-
-
-
 
 pdf.output("output.pdf")
